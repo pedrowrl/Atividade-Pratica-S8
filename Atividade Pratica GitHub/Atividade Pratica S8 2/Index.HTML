@@ -1,0 +1,42 @@
+<!-- 
+Curso de Engenharia de Software - UniEVANGÉLICA 
+Disciplina de Programação Web 
+Dev: Pedro Wilson Rodrigues de Lima 
+DATA 11/04/2023
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Exemplo de Lista com Possibilidade de Adicionar Itens</title> 
+   <style>
+   </style>
+</head>
+<body>
+    <h1>Minha Lista</h1>
+    <ul id="minha-lista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+<label for="novo-item">Adicionar novo item:</label>
+<input type="text" id="novo-item" name="novo-item" placeholder="Digite o nome do novo item...">
+<input type="button" value="Adicionar" onclick="adicionarItem()">
+<script>
+    function adicionarItem() {
+
+  const novoItem = document.getElementById("novo-item").value;
+
+  if (novoItem.trim() !== "") {
+    const novoElemento = document.createElement("li");
+
+    novoElemento.innerText = novoItem;
+
+    const listaExistente = document.getElementById("minha-lista");
+
+    listaExistente.appendChild(novoElemento);
+
+    document.getElementById("novo-item").value = "";
+  }
+}
+
