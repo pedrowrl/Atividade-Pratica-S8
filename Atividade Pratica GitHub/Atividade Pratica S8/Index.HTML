@@ -9,6 +9,20 @@ DATA 11/04/2023
 <html>
 <head>
 	<title>Formulário e Tabela</title>
+	<script>
+		function limparTudo() {
+			// Limpa os valores dos campos de entrada
+			document.getElementById("nome").value = "";
+			document.getElementById("pais").value = "";
+
+			// Remove todas as linhas da tabela
+			var tabela = document.querySelector("table");
+			var linhas = tabela.getElementsByTagName("tr");
+			while (linhas.length > 0) {
+				linhas[0].parentNode.removeChild(linhas[0]);
+			}
+		}
+	</script>
 </head>
 <body>
 	<form>
@@ -31,5 +45,8 @@ DATA 11/04/2023
 			<td>42 anos</td>
 		</tr>
 	</table>
+	<br>
+	<button onclick="limparTudo()">Limpar Tudo</button>
 </body>
 </html>
+
