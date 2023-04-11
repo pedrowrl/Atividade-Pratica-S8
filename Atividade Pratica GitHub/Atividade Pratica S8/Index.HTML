@@ -22,6 +22,22 @@ DATA 11/04/2023
 				linhas[0].parentNode.removeChild(linhas[0]);
 			}
 		}
+
+		function adicionar() {
+			// Lê os valores dos campos de entrada
+			var nome = document.getElementById("nome").value;
+			var pais = document.getElementById("pais").value;
+
+			// Cria uma nova linha na tabela com os valores lidos
+			var novaLinha = "<tr><td>" + nome + "</td><td>" + pais + "</td></tr>";
+
+			// Adiciona a nova linha à tabela existente
+			document.querySelector("table").innerHTML += novaLinha;
+
+			// Limpa os valores dos campos de entrada
+			document.getElementById("nome").value = "";
+			document.getElementById("pais").value = "";
+		}
 	</script>
 </head>
 <body>
@@ -47,6 +63,7 @@ DATA 11/04/2023
 	</table>
 	<br>
 	<button onclick="limparTudo()">Limpar Tudo</button>
+	<button onclick="adicionar()">Adicionar</button>
 </body>
 </html>
 
