@@ -11,11 +11,9 @@ DATA 11/04/2023
 	<title>Formulário e Tabela</title>
 	<script>
 		function limparTudo() {
-			// Limpa os valores dos campos de entrada
 			document.getElementById("nome").value = "";
 			document.getElementById("pais").value = "";
 
-			// Remove todas as linhas da tabela
 			var tabela = document.querySelector("table");
 			var linhas = tabela.getElementsByTagName("tr");
 			while (linhas.length > 0) {
@@ -24,17 +22,12 @@ DATA 11/04/2023
 		}
 
 		function adicionar() {
-			// Lê os valores dos campos de entrada
 			var nome = document.getElementById("nome").value;
 			var pais = document.getElementById("pais").value;
-
-			// Cria uma nova linha na tabela com os valores lidos
 			var novaLinha = "<tr><td>" + nome + "</td><td>" + pais + "</td></tr>";
 
-			// Adiciona a nova linha à tabela existente
 			document.querySelector("table").innerHTML += novaLinha;
 
-			// Limpa os valores dos campos de entrada
 			document.getElementById("nome").value = "";
 			document.getElementById("pais").value = "";
 		}
